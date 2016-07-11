@@ -27,3 +27,23 @@ ERROR in ./packages/minimal/src/index.js
 Module not found: Error: Cannot resolve module 'ApiClient' in /Users/lin/git/swagger/webpack_minimal/packages/minimal/src
  @ ./packages/minimal/src/index.js 32:4-52
 ```
+
+# 地雷2
+
+ApiClient 用到 fs
+```js
+// fs.ReadStream in Node.js (but not in runtime like browserify)
+if (typeof window === 'undefined' &&
+    typeof require === 'function' &&
+    require('fs') &&
+    param instanceof require('fs').ReadStream) {
+  return true;
+}
+
+```
+
+```
+ERROR in ./packages/minimal/src/ApiClient.js
+Module not found: Error: Cannot resolve module 'fs' in /Users/lin/git/swagger/webpack_minimal/packages/minimal/src
+ @ ./packages/minimal/src/ApiClient.js 103:74-87 103:108-121
+```
