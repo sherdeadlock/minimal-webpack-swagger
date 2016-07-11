@@ -2,6 +2,8 @@ swagger: '2.0'
 info:
   version: 1.0.0
   title: Minimal API
+host: localhost:3000
+basePath: /v1
 paths:
   /:
     get:

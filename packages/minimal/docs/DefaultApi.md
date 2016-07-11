@@ -1,6 +1,6 @@
 # MinimalApi.DefaultApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://localhost:3000/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
