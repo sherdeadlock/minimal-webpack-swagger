@@ -12,6 +12,16 @@ npm install
 
 判斷有 define 這個 function 而跑進 AMD 那段程式
 
+```js
+if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(['ApiClient', 'api/DefaultApi'], factory);
+} else if (typeof module === 'object' && module.exports) {
+    // CommonJS-like environments that support module.exports, like Node.
+    module.exports = factory(require('./ApiClient'), require('./api/DefaultApi'));
+}
+```
+
 ```
 ERROR in ./packages/minimal/src/index.js
 Module not found: Error: Cannot resolve module 'ApiClient' in /Users/lin/git/swagger/webpack_minimal/packages/minimal/src
