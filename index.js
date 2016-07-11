@@ -1,9 +1,12 @@
 import minimal from 'minimal_api'
 
-const api = new minimal.DefaultApi()
-apiInstance.rootGet().then(function() {                                         
-  console.log('API called successfully.')
-}, function(error) {                                                            
-  console.error(error)
+document.addEventListener('DOMContentLoaded', (evt) => {
+  const api = new minimal.DefaultApi()
+  api.rootGet().then((err, data, res) {
+    console.log('API called successfully.')
+    console.log(err, data)
+  }, function(error) {
+    console.error(error)
+  })
+  console.log('hello')
 })
-console.log('hello')
