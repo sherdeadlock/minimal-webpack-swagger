@@ -64,3 +64,13 @@ ERROR in ./packages/minimal/src/ApiClient.js
 Module not found: Error: Cannot resolve module 'fs' in /Users/lin/git/swagger/webpack_minimal/packages/minimal/src
  @ ./packages/minimal/src/ApiClient.js 103:74-87 103:108-121
 ```
+
+解法：
+Include polyfills or mocks for various node stuff https://webpack.github.io/docs/configuration.html#node
+
+webpack.config.js 增加
+```
+node: {
+  fs: 'empty',
+}
+```
