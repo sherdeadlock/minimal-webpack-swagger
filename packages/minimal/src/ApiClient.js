@@ -40,7 +40,7 @@
   'use strict';
 
   var exports = function() {
-    this.basePath = 'https://localhost:3000/v1'.replace(/\/+$/, '');
+    this.basePath = 'http://localhost:3000/v1'.replace(/\/+$/, '');
 
     this.authentications = {
     };

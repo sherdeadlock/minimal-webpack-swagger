@@ -4,6 +4,8 @@ info:
   title: Minimal API
 host: localhost:3000
 basePath: /v1
+schemes:
+  - http
 paths:
   /:
     get:
