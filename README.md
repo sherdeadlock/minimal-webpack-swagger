@@ -28,6 +28,23 @@ Module not found: Error: Cannot resolve module 'ApiClient' in /Users/lin/git/swa
  @ ./packages/minimal/src/index.js 32:4-52
 ```
 
+解法：
+Disable AMD https://github.com/webpack/imports-loader#disable-amd
+
+add loader `imports?define=>false`
+```js
+{
+  test: /\.js$/,
+  loaders: [ 
+    'babel', 
+    'imports?define=>false' 
+  ],
+  exclude: /node_modules/,
+  include: __dirname
+},
+```
+
+
 # 地雷2
 
 ApiClient 用到 fs
