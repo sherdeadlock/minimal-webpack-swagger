@@ -13,6 +13,11 @@ app.get("/", function(req, res) {
   res.sendFile(__dirname + '/index.html')
 })
 
+// mock
+app.get('/v1', function(req, res) {
+  res.sendStatus(200)
+})
+
 app.listen(port, function (err) {
   if (err) {
     console.log(err)
